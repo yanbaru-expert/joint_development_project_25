@@ -24,6 +24,11 @@ class MessagesController < ApplicationController
     message.update(message_params)
   end
 
+  def destroy
+    message = Message.find(params[:id])
+    message.delete
+  end
+
   private
 
   # 何でもかんでも登録出来ないようにする 他では使わないのでプライベートにする
